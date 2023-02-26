@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Dave Quah (@Milleus)">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./global.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W6QZZYV2W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5W6QZZYV2W');
+  </script>
+  </style>
+</head>
+
+<body>
+  <main class="landing">
+    <img class="logo" src="./images/logo.svg" alt="Base Apparel">
+
+    <picture class="hero">
+      <img src="./images/hero-mobile.jpg" alt="Fasionable woman in base apparel clothing">
+    </picture>
+
+    <div class="intro">
+      <h1 class="text-red-100 fs-800 fw-300 ls-wider uppercase">
+        We're <span class="block text-neutral-800 fw-600">coming soon</span>
+      </h1>
+      <p class="description">
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+
+      <form id="sign-up-form">
+        <label for="email-input" class="sr-only">Email Address</label>
+        <input id="email-input" class="input" data-variant="primary" type="email" placeholder="Email Address"
+          aria-describedby="email-error" maxlength="255" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          required>
+        <p id="email-error" class="error text-red-400 fs-300" aria-live="polite"></p>
+        <div class="control flex">
+          <img class="hidden" src="./images/icon-error.svg" alt="" aria-hidden="true">
+          <button type="submit" class="button" data-variant="primary">
+            <img src="./images/icon-arrow.svg" alt="Submit">
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const signUpForm = document.querySelector("#sign-up-form");
+    const emailInput = document.querySelector("#email-input");
+    const emailError = document.querySelector("#email-error");
+
+    signUpForm.noValidate = true;
+
+    emailInput.addEventListener("input", (event) => {
+      if (!emailInput.validity.valueMissing && !emailInput.validity.patternMismatch) {
+        emailInput.setAttribute("aria-invalid", false);
+        emailError.textContent = "";
+      }
+    });
+
+    signUpForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (emailInput.validity.valueMissing || emailInput.validity.patternMismatch) {
+        emailInput.setAttribute("aria-invalid", true);
+        emailError.textContent = "Please provide a valid email";
+        emailInput.focus();
+        return;
+      };
+
+      try {
+        alert("Thanks for subscribing!");
+
+        emailInput.setAttribute("aria-invalid", false);
+        emailError.textContent = "";
+      } catch (e) {
+        alert("Oops! Something went wrong. Please try again later.");
+      }
+    });
+  </script>
+</body>
+
+</html>
