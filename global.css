@@ -27,11 +27,12 @@
   --fw-600: 600;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 65em) {
   :root {
     --fs-400: 1rem;
     --fs-800: 4rem;
 
+    --lh-300: 1.75rem;
     --lh-400: 1.75rem;
     --lh-800: 4.4375rem;
 
@@ -201,11 +202,23 @@ select {
 .landing {
   min-height: 100vh;
   min-width: min-content;
+  align-content: flex-start;
+  margin-inline: auto;
+  max-width: 40rem;
+  grid-template-areas:
+    "logo"
+    "hero"
+    "intro";
 }
 
 .landing > .logo {
+  grid-area: logo;
   max-width: 6.25rem;
   margin: 2rem;
+}
+
+.landing > .hero {
+  grid-area: hero;
 }
 
 .landing > .hero img {
@@ -213,7 +226,8 @@ select {
 }
 
 .landing > .intro {
-  margin: 4rem 2rem;
+  grid-area: intro;
+  margin: 4rem 2rem 4.4375rem;
   text-align: center;
 }
 
@@ -231,6 +245,41 @@ select {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media (min-width: 65em) {
+  .landing {
+    grid-template-columns: auto max-content;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas:
+      "logo hero"
+      "intro hero";
+    max-width: 90rem;
+    background: url("./images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+  }
+
+  .landing > .logo {
+    margin: 4.0625rem 0 0 10.3125rem;
+    max-width: 9.875rem;
+  }
+
+  .landing > .intro {
+    margin: 8.5rem 13.75rem 8.125rem 10.3125rem;
+    text-align: start;
+  }
+
+  .landing > .intro h1 span {
+    line-height: 1;
+  }
+
+  .landing > .intro .description {
+    margin-block: 2rem 2.5rem;
+  }
+
+  .landing > .intro #sign-up-form .control {
+    gap: 1rem;
+  }
 }
 
 /* ------------------- */
@@ -268,9 +317,10 @@ select {
 }
 
 .error {
-  min-height: 1.8125rem;
+  box-sizing: content-box;
   text-align: start;
-  padding: 0.5rem 1.5rem;
+  min-height: 0.8125rem;
+  padding: 0.5rem 0 0 1.5rem;
 }
 
 .button {
@@ -305,4 +355,21 @@ select {
       hsl(var(--clr-red-300) / 0.5) 100%
     ),
     hsl(var(--clr-neutral-100));
+}
+
+@media (min-width: 65em) {
+  .input[data-variant="primary"] {
+    padding: 0.9375rem 9.75rem 0.8125rem 2rem;
+    max-height: 3.5rem;
+  }
+
+  .error {
+    min-height: 1.75rem;
+    padding: 0.25rem 0 0 2rem;
+  }
+
+  .button[data-variant="primary"] {
+    padding: 1.1875rem 44px;
+    max-height: 3.5rem;
+  }
 }

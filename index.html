@@ -27,16 +27,20 @@
 </head>
 
 <body>
-  <main class="landing">
+  <main class="landing grid">
     <img class="logo" src="./images/logo.svg" alt="Base Apparel">
 
     <picture class="hero">
+      <source srcset="./images/hero-desktop.jpg" media="(min-width: 65em)">
       <img src="./images/hero-mobile.jpg" alt="Fasionable woman in base apparel clothing">
     </picture>
 
     <div class="intro">
-      <h1 class="text-red-100 fs-800 fw-300 ls-wider uppercase">
-        We're <span class="block text-neutral-800 fw-600">coming soon</span>
+      <h1 class="ls-wider uppercase">
+        <span class="block text-red-100 fs-800 fw-300">We're</span>
+        <span class="block text-neutral-800 fs-800 fw-600">
+          coming soon
+        </span>
       </h1>
       <p class="description">
         Hello fellow shoppers! We're currently building our new fashion store.
