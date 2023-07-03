@@ -247,7 +247,7 @@ select {
   right: 0;
 }
 
-@media (min-width: 90em) {
+@media (min-width: 90em) and (max-height: 90em) {
   .landing {
     grid-template-columns: auto 610px;
     grid-template-rows: min-content 1fr;
