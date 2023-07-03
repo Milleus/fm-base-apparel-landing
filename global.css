@@ -27,7 +27,7 @@
   --fw-600: 600;
 }
 
-@media (min-width: 65em) {
+@media (min-width: 90em) {
   :root {
     --fs-400: 1rem;
     --fs-800: 4rem;
@@ -247,21 +247,27 @@ select {
   right: 0;
 }
 
-@media (min-width: 65em) {
+@media (min-width: 90em) {
   .landing {
-    grid-template-columns: auto max-content;
+    grid-template-columns: auto 610px;
     grid-template-rows: min-content 1fr;
     grid-template-areas:
       "logo hero"
       "intro hero";
-    max-width: 90rem;
-    background: url("./images/bg-pattern-desktop.svg");
-    background-repeat: no-repeat;
+    max-width: none;
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-repeat: repeat-x;
+    background-size: calc(100% - 610px) 100%;
   }
 
   .landing > .logo {
     margin: 4.0625rem 0 0 10.3125rem;
     max-width: 9.875rem;
+  }
+
+  .landing > .hero img {
+    height: 100%;
+    object-fit: cover;
   }
 
   .landing > .intro {
@@ -357,7 +363,7 @@ select {
     hsl(var(--clr-neutral-100));
 }
 
-@media (min-width: 65em) {
+@media (min-width: 90em) {
   .input[data-variant="primary"] {
     padding: 0.9375rem 9.75rem 0.8125rem 2rem;
     max-height: 3.5rem;
