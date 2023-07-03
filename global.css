@@ -302,7 +302,7 @@ select {
 }
 
 .input[data-variant="primary"] {
-  border: 1px solid hsl(var(--clr-red-100));
+  border: 1px solid hsl(var(--clr-red-100) / 0.5);
   border-radius: 1.75rem;
   color: hsl(var(--clr-neutral-800));
   width: 100%;
