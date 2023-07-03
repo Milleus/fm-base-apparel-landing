@@ -38,8 +38,8 @@ Mobile view
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://github.com/Milleus/fm-base-apparel-landing](https://github.com/Milleus/fm-base-apparel-landing)
+- Solution URL: [https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-ei8oz2Guyb](https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-ei8oz2Guyb)
+- Live Site URL: [https://Milleus.github.io/fm-base-apparel-landing/](https://Milleus.github.io/fm-base-apparel-landing/)
 
 ## My process
 
@@ -53,7 +53,11 @@ Mobile view
 
 ### What I learned
 
-- Practice grid layout
+- Using Constraint Validation APIs
+- Email typeMismatch allows email addresses without a top-level domain, i.e. x@y is a valid email
+- Using patternMismatch to accept only emails with top-level domain
+- Setting novalidate with JavaScript instead of HTML allows for native form validation fallback when JavaScript fails
+- Considerations for full-height images and larger viewports
 
 ### Useful resources
 
